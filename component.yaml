@@ -22,7 +22,7 @@ inputs:
   description: Azure DevOps Repository Name
   helpText:
 - key: "AC_AZURE_BASE_URL"
-  defaultValue: "$AC_AZURE_BASE_URL"
+  defaultValue: "https://dev.azure.com"
   isRequired: true
   title: Azure DevOps Base URL
   description: Azure DevOps Base URL
