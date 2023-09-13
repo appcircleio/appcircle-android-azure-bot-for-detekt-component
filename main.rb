@@ -22,7 +22,7 @@ detekt_html = File.read(detekt_file_path)
 $doc_detekt = Nokogiri::HTML::Document.parse(detekt_html)
 ac_build_profile_id = get_env_variable('AC_BUILD_PROFILE_ID')
 ac_domain_name = get_env_variable('AC_DOMAIN_NAME')
-azure_api_version = get_env_variable('AC_AZURE_API_VERSION')
+$azure_api_version = get_env_variable('AC_AZURE_API_VERSION')
 $ac_build_profile_url = "https://#{ac_domain_name}/build/detail/#{ac_build_profile_id}"
 
 def extract_total_findings()
