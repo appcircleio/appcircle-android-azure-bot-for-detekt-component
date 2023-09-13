@@ -117,12 +117,12 @@ if File.exist?(detekt_file_path)
     if  findings_num > 0
         puts "Finding Total: #{findings_num}"
         status_warn_msg = "Some errors were returned from the detect report for PR ##{$ac_pr_number}, the errors should be fixed."
+        puts state_warn_msg
         warning_message = extract_metrics_and_complexity(findings_num)
         status_state = "failed"
 
         add_comment_to_pr(warning_message)
         change_status(status_warn_msg, status_state)
-        abort state_warn_msg
     else
         puts "Finding Total: #{findings_num}."
         warning_message = "PR #{$ac_pr_number} is ready to review! No warnings, No violation."
