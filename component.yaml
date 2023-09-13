@@ -55,4 +55,3 @@ processFilename: ruby
 processArguments: '%AC_STEP_TEMP%/main.rb'
 files:
 - "main.rb"
-- "git_clone.sh"
