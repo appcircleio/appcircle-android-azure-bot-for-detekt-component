@@ -78,7 +78,7 @@ def add_comment_to_pr(warning_message)
     if response.code.to_i == 200
         puts "Comment added to PR ##{$ac_pr_number} successfully."
     else
-        puts "Error adding comment to PR ##{$ac_pr_number}. \nResponse message: #{response.message}"
+        abort "Error adding comment to PR ##{$ac_pr_number}. \nResponse message: #{response.message}"
     end
 end
 
