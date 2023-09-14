@@ -12,18 +12,18 @@ $organization_name = get_env_variable('AC_AZURE_ORG_NAME')
 $project_name = get_env_variable('AC_AZURE_PROJECT_NAME')
 $repository = get_env_variable('AC_AZURE_REPO_NAME')
 $base_url = get_env_variable('AC_AZURE_BASE_URL')
+$azure_api_version = get_env_variable('AC_AZURE_API_VERSION')
 azure_api_key = get_env_variable('AC_AZURE_API_KEY')
 $basic_token = "Basic #{Base64.strict_encode64(":#{azure_api_key}")}"
-$json_content = "application/json"
 
 $ac_pr_number = get_env_variable('AC_PULL_NUMBER')
 detekt_file_path = get_env_variable('AC_DETEKT_FILE_PATH')
-detekt_html = File.read(detekt_file_path)
-$doc_detekt = Nokogiri::HTML::Document.parse(detekt_html)
 ac_build_profile_id = get_env_variable('AC_BUILD_PROFILE_ID')
 ac_domain_name = get_env_variable('AC_DOMAIN_NAME')
-$azure_api_version = get_env_variable('AC_AZURE_API_VERSION')
 $ac_build_profile_url = "https://#{ac_domain_name}/build/detail/#{ac_build_profile_id}"
+detekt_html = File.read(detekt_file_path)
+$doc_detekt = Nokogiri::HTML::Document.parse(detekt_html)
+$json_content = "application/json"
 
 def extract_total_findings()
     findings_num = $doc_detekt.at_xpath('//h2[text()="Findings"]/following-sibling::div').text[/Total: (\d[\d,]*)/, 1].gsub(',', '').to_i
