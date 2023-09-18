@@ -1,6 +1,6 @@
 platform: Android
 buildPlatform:
-displayName: Azure DevOps Bot For Detekt Report
+displayName: Azure DevOps Bot for Detekt Report
 description: "Bot script that allows Detekt outputs to make changes to Azure DevOps Pull Requests."
 inputs:
 - key: "AC_AZURE_ORG_NAME"

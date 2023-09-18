@@ -1,4 +1,4 @@
-# Appcircle _Azure DevOps Bot For Detekt Report_ component
+# Appcircle _Azure DevOps Bot for Detekt Report_ component
 
 Bot script that allows Detekt outputs to make changes to Azure DevOps Pull Requests.
 
